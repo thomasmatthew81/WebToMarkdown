@@ -1,8 +1,16 @@
 # Overview
 
-Web2LLMs is a command-line interface (CLI) tool designed to convert web page content into Markdown format and structure it according to the llms.txt specification. The tool fetches web pages, extracts their content, converts HTML to clean Markdown, and formats the output for optimal consumption by Large Language Models (LLMs).
+This project contains two CLI tools for content conversion:
+
+## Web2LLMs (web2llms.py)
+A command-line interface (CLI) tool designed to convert web page content into Markdown format and structure it according to the llms.txt specification. The tool fetches web pages, extracts their content, converts HTML to clean Markdown, and formats the output for optimal consumption by Large Language Models (LLMs).
 
 **Status:** Completed and fully functional. The CLI accepts multiple URLs as input and generates properly formatted llms.txt files with structured content.
+
+## Markdown to HTML Converter (md2html.py)
+A command-line tool that converts Markdown files into beautifully styled HTML pages with automatic image extraction. The tool processes images from base64 data URIs, external URLs, and local file paths, saves them to an assets directory, and links them properly in the generated HTML.
+
+**Status:** Completed and fully functional. The CLI converts markdown files with beautiful CSS styling and handles all image types.
 
 # User Preferences
 
@@ -11,7 +19,13 @@ Preferred communication style: Simple, everyday language.
 # System Architecture
 
 ## Core Architecture
-The application follows a single-file, class-based architecture with a monolithic design pattern. The main `Web2LLMsConverter` class encapsulates all functionality, making it simple to understand and maintain.
+The project consists of two independent CLI tools, each in its own file:
+
+### web2llms.py
+Single-file, class-based architecture with `Web2LLMsConverter` class that handles web scraping and llms.txt generation.
+
+### md2html.py  
+Single-file, class-based architecture with `MarkdownToHtmlConverter` class that handles markdown parsing and HTML generation with image extraction.
 
 ## Content Processing Pipeline
 The system implements a multi-stage content processing pipeline:
@@ -33,14 +47,24 @@ The architecture includes timeout mechanisms (30-second request timeout) and HTT
 # External Dependencies
 
 ## Core Libraries
+
+### web2llms.py
 - **requests**: HTTP client library for web page fetching and session management
 - **html2text**: HTML to Markdown conversion engine with configurable output formatting
 - **beautifulsoup4**: HTML parsing and DOM manipulation library for content extraction
-- **urllib.parse**: Built-in Python module for URL parsing and validation
+
+### md2html.py
+- **markdown**: Python Markdown parser with extensions for tables, code highlighting, and more
+- **Pillow**: Python Imaging Library for processing base64 images and image format detection
+- **pygments**: Syntax highlighting library for code blocks in HTML output
+- **requests**: HTTP client library for downloading external images
 
 ## System Dependencies
 - **argparse**: Built-in Python module for command-line argument parsing
 - **datetime**: Built-in Python module for timestamp generation
 - **sys/os**: Built-in Python modules for system operations and file handling
+- **re**: Built-in Python module for regular expression pattern matching
+- **base64**: Built-in Python module for base64 encoding/decoding
+- **hashlib**: Built-in Python module for generating hash-based filenames
 
 The application is designed to be lightweight with minimal external dependencies, focusing on reliability and ease of deployment.
