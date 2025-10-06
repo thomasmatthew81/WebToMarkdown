@@ -18,6 +18,10 @@ author = "agent"
 task = "workflow.run"
 args = "Web2LLMs CLI"
 
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Markdown to HTML"
+
 [[workflows.workflow]]
 name = "Web2LLMs CLI"
 author = "agent"
@@ -25,6 +29,17 @@ author = "agent"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "python web2llms.py --help"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow]]
+name = "Markdown to HTML"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python md2html.py --help"
 
 [workflows.workflow.metadata]
 outputType = "console"
