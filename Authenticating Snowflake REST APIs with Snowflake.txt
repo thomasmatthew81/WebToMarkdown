@@ -1,0 +1,212 @@
+# Web Content Collection
+
+> A collection of 1 web pages converted to Markdown format. Generated on 2025-10-24 12:26:20.
+
+## Converted Web Pages
+
+### Authenticating Snowflake REST APIs with Snowflake | Snowflake Documentation
+
+**Source:** https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication
+
+# Authenticating Snowflake REST APIs with Snowflake¶
+
+This topic describes how to authenticate to the server when using the Snowflake REST APIs.
+
+When you send a request, the request must include authentication information using either of the following:
+
+  * Using key pair authentication
+
+  * Using OAuth
+
+  * Using a programmatic access token (PAT)
+
+
+
+
+## Using key pair authentication¶
+
+When using key pair authentication, you need to complete the following tasks:
+
+  1. Set up key pair authentication
+
+  2. Generate a JWT token
+
+
+
+
+### Set up key pair authentication¶
+
+To use key pair authentication, follow these steps:
+
+  1. Set up key pair authentication.
+
+As part of this process, you must:
+
+     1. Generate a public-private key pair. The generated private key should be in a file (e.g. named `rsa_key.p8`).
+
+     2. Assign the public key to your Snowflake user. After you assign the key to the user, run the [DESCRIBE USER](../../sql-reference/sql/desc-user) command. In the output, the `RSA_PUBLIC_KEY_FP` property should be set to the fingerprint of the public key assigned to the user.
+
+For instructions on how to generate the key pair and assign a key to a user, see [Key-pair authentication and key-pair rotation](../../user-guide/key-pair-auth).
+
+  2. Use Snowflake CLI to verify that you can use the generated private key to [connect to Snowflake](../snowflake-cli/connecting/configure-connections.html#label-snowcli-private-key):
+         
+         $ snow connection test --account <account_identifier> --user <user> --private-key-path <path>/rsa_key.p8
+         
+
+Copy
+
+If you generated an encrypted private key, Snowflake CLI prompts you for the passphrase that you created when you generated the key.
+
+
+
+
+### Generate a JWT token¶
+
+To generate a JWT token in your application code, use the following steps:
+
+  1. Generate the fingerprint (a SHA-256 hash) of the public key for the user. Prefix the fingerprint with `SHA256:`.
+
+> For example:
+>
+>> `SHA256:_hash_`
+> 
+> You can also execute the SQL [DESCRIBE USER](../../sql-reference/sql/desc-user) command to get the value from the RSA_PUBLIC_KEY_FP property.
+
+  2. Generate [a JSON Web Token (JWT)](https://en.wikipedia.org/wiki/JSON_Web_Token) with the following fields in the payload:
+
+> Field | Description | Example  
+> ---|---|---  
+> `iss` | Issuer of the JWT. Set it to the following value:
+>
+>> `_account_identifier_._user_.SHA256:_public_key_fingerprint_`
+> 
+> where:
+>      * `_account_identifier_` is your Snowflake [account identifier](../../user-guide/admin-account-identifier). If you are using the [account locator](../../user-guide/admin-account-identifier.html#label-account-locator), exclude any region information from the account locator.
+>      * `_user_` is your Snowflake user name.
+>      * `SHA256:_public_key_fingerprint_` is the fingerprint that you generated in the previous step.
+> Note The `_account_identifier_` and `_user_` values must use all uppercase characters. | `MYORGANIZATION-MYACCOUNT.MYUSER.SHA256:_public_key_fingerprint_`  
+> `sub` | Subject for the JWT. Set it to the following value: `_account_identifier_._user_` | `MYORGANIZATION-MYACCOUNT.MYUSER`  
+> `iat` | Issue time for the JWT in UTC. Set the value to the current time value as either seconds or milliseconds. | `1615370644` (seconds) . `1615370644000` (milliseconds)  
+> `exp` | Expiration time for the JWT in UTC. You can specify the value as either seconds or milliseconds.
+>
+>> Note The JWT is valid for at most one hour after the token is issued, even if you specify a longer expiration time. | `1615374184` (seconds) . `1615374184000` (milliseconds)  
+  
+  3. In each API request that you send, set the following headers:
+
+>      * `Authorization: Bearer _JWT_`
+> 
+> where `_JWT_` is the token that you generated.
+> 
+>      * (Optional) `X-Snowflake-Authorization-Token-Type: KEYPAIR_JWT`
+> 
+> If you omit the `X-Snowflake-Authorization-Token-Type` header, Snowflake determines the token type by examining the token.
+> 
+> Even though this header is optional, you can choose to specify this header. You can set the header to one of the following values:
+> 
+>        * `KEYPAIR_JWT` (for key-pair authentication)
+> 
+>        * `OAUTH` (for OAuth)
+> 
+>        * `PROGRAMMATIC_ACCESS_TOKEN` (for [programmatic access tokens](../../user-guide/programmatic-access-tokens))
+
+
+
+
+## Using OAuth¶
+
+To use OAuth, follow these steps:
+
+  1. Set up OAuth for authentication.
+
+See [Introduction to OAuth](../../user-guide/oauth-intro) for details on how to set up OAuth and get an OAuth token.
+
+  2. Use Snowflake CLI to verify that you can use a generated OAuth token to connect to Snowflake:
+
+     * For Linux and MacOS systems
+
+> $ snow connection test --account <account_identifier> --user <user> --authenticator=oauth --token=<oauth_token>
+>     
+> 
+> Copy
+
+     * For Windows systems
+
+> $ snow connection test --account <account_identifier> --user <user> --authenticator=oauth --token="<oauth_token>"
+>     
+> 
+> Copy
+
+  3. In each API request you send, set the following headers:
+
+     * `Authorization: Bearer _oauth_token_`
+
+where `_oauth_token_` is the generated OAuth token.
+
+     * (Optional) `X-Snowflake-Authorization-Token-Type: OAUTH`
+
+If you omit the `X-Snowflake-Authorization-Token-Type` header, Snowflake determines the token type by examining the token.
+
+Even though this header is optional, you can choose to specify this header. You can set the header to one of the following values:
+
+       * `KEYPAIR_JWT` (for key-pair authentication)
+
+       * `OAUTH` (for OAuth)
+
+       * `PROGRAMMATIC_ACCESS_TOKEN` (for [programmatic access tokens](../../user-guide/programmatic-access-tokens))
+
+
+
+
+## Using a programmatic access token (PAT)¶
+
+To authenticate with a programmatic access token, set the following HTTP headers in the request:
+
+  * `Authorization: Bearer _token_secret_`
+
+  * `X-Snowflake-Authorization-Token-Type: PROGRAMMATIC_ACCESS_TOKEN` (optional)
+
+
+
+
+For example, if you are using cURL to send a request to a [Snowflake REST API](snowflake-rest-api) endpoint:
+    
+    
+    curl --location 'https://myorganization-myaccount.snowflakecomputing.com/api/v2/databases' \
+      --header "Authorization: Bearer <token_secret>"
+    
+
+Copy
+
+If the request fails with a `PAT_INVALID` error, the error might have occurred for one of the following reasons:
+
+  * The user associated with the programmatic access token was not found.
+
+  * Validation failed.
+
+  * The role associated with the programmatic access token was not found.
+
+  * The user is not associated with the specified programmatic access token.
+
+
+
+
+For more information, see [Using a programmatic access token to authenticate to an endpoint](../../user-guide/programmatic-access-tokens.html#label-pat-use-endpoint).
+
+On this page
+
+  1. Using key pair authentication
+  2. Using OAuth
+  3. Using a programmatic access token (PAT)
+
+
+
+Language: **English**
+
+  * [English](/en/developer-guide/snowflake-rest-api/authentication)
+  * [Français](/fr/developer-guide/snowflake-rest-api/authentication)
+  * [Deutsch](/de/developer-guide/snowflake-rest-api/authentication)
+  * [日本語](/ja/developer-guide/snowflake-rest-api/authentication)
+  * [한국어](/ko/developer-guide/snowflake-rest-api/authentication)
+  * [Português](/pt/developer-guide/snowflake-rest-api/authentication)
+
+---
