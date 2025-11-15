@@ -1,53 +1,103 @@
-# Web Content Collection
+[![logo](https://reference.langchain.com/python/static/brand/reference-light.svg)
+![logo](https://reference.langchain.com/python/static/brand/reference-dark.svg)](https://reference.langchain.com/python/ "LangChain Reference")
+LangChain Reference
 
-> A collection of 1 web pages converted to Markdown format. Generated on 2025-11-15 15:03:33.
+[langchain-ai/docs
 
-## Converted Web Pages
+* 100
+* 820](https://github.com/langchain-ai/docs "Go to repository")
 
-### Constants | LangChain Reference
+* [Get started](https://reference.langchain.com/python/)
+* [LangChain](https://reference.langchain.com/python/langchain/)
+* [LangGraph](https://reference.langchain.com/python/langgraph/)
 
-**Source:** https://reference.langchain.com/python/langgraph/constants/
+  LangGraph
+  + langgraph
 
-Skip to content 
 
-[ ](https://github.com/langchain-ai/docs/tree/main/reference/python/docs/langgraph/constants.md "Edit this page")
+
+
+    langgraph
+    - [Graphs](https://reference.langchain.com/python/langgraph/graphs/)
+    - [Functional API](https://reference.langchain.com/python/langgraph/func/)
+    - [Pregel](https://reference.langchain.com/python/langgraph/pregel/)
+    - [Checkpointing](https://reference.langchain.com/python/langgraph/checkpoints/)
+    - [Storage](https://reference.langchain.com/python/langgraph/store/)
+    - [Caching](https://reference.langchain.com/python/langgraph/cache/)
+    - [Types](https://reference.langchain.com/python/langgraph/types/)
+    - [Runtime](https://reference.langchain.com/python/langgraph/runtime/)
+    - [Config](https://reference.langchain.com/python/langgraph/config/)
+    - [Errors](https://reference.langchain.com/python/langgraph/errors/)
+    - Constants
+
+      [Constants](https://reference.langchain.com/python/langgraph/constants/)
+
+
+
+      Table of contents
+      * [constants](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants)
+
+        + [TAG\_HIDDEN](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.TAG_HIDDEN)
+        + [TAG\_NOSTREAM](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.TAG_NOSTREAM)
+        + [START](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.START)
+        + [END](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.END)
+    - [Channels](https://reference.langchain.com/python/langgraph/channels/)
+  + Prebuilt
+
+
+
+
+    Prebuilt
+    - [Agents](https://reference.langchain.com/python/langgraph/agents/)
+    - [Supervisor](https://reference.langchain.com/python/langgraph/supervisor/)
+    - [Swarm](https://reference.langchain.com/python/langgraph/swarm/)
+* [Deep Agents](https://reference.langchain.com/python/deepagents/)
+* [Integrations](https://reference.langchain.com/python/integrations/)
+* [LangSmith](https://reference.langchain.com/python/langsmith/)
+
+Table of contents
+
+* [constants](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants)
+
+  + [TAG\_HIDDEN](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.TAG_HIDDEN)
+  + [TAG\_NOSTREAM](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.TAG_NOSTREAM)
+  + [START](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.START)
+  + [END](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.END)
 
 # Constants
 
-##  `` langgraph.constants ¶
+## langgraph.constants [¶](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants "Copy anchor link to this section for reference")
 
-###  `` TAG_HIDDEN `module-attribute` ¶
-    
-    
-    TAG_HIDDEN = [intern](https://docs.python.org/3/library/sys.html#sys.intern "<code>sys.intern</code>")('langsmith:hidden')
-    
+### TAG\_HIDDEN `module-attribute` [¶](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.TAG_HIDDEN "Copy anchor link to this section for reference")
+
+```
+TAG_HIDDEN = intern('langsmith:hidden')
+```
 
 Tag to hide a node/edge from certain tracing/streaming environments.
 
-###  `` TAG_NOSTREAM `module-attribute` ¶
-    
-    
-    TAG_NOSTREAM = [intern](https://docs.python.org/3/library/sys.html#sys.intern "<code>sys.intern</code>")('nostream')
-    
+### TAG\_NOSTREAM `module-attribute` [¶](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.TAG_NOSTREAM "Copy anchor link to this section for reference")
+
+```
+TAG_NOSTREAM = intern('nostream')
+```
 
 Tag to disable streaming for a chat model.
 
-###  `` START `module-attribute` ¶
-    
-    
-    START = [intern](https://docs.python.org/3/library/sys.html#sys.intern "<code>sys.intern</code>")('__start__')
-    
+### START `module-attribute` [¶](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.START "Copy anchor link to this section for reference")
+
+```
+START = intern('__start__')
+```
 
 The first (maybe virtual) node in graph-style Pregel.
 
-###  `` END `module-attribute` ¶
-    
-    
-    END = [intern](https://docs.python.org/3/library/sys.html#sys.intern "<code>sys.intern</code>")('__end__')
-    
+### END `module-attribute` [¶](https://reference.langchain.com/python/langgraph/constants/#langgraph.constants.END "Copy anchor link to this section for reference")
+
+```
+END = intern('__end__')
+```
 
 The last (maybe virtual) node in graph-style Pregel.
 
 Back to top
-
----

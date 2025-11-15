@@ -1,143 +1,191 @@
-# Web Content Collection
+[![logo](https://reference.langchain.com/python/static/brand/reference-light.svg)
+![logo](https://reference.langchain.com/python/static/brand/reference-dark.svg)](https://reference.langchain.com/python/ "LangChain Reference")
+LangChain Reference
 
-> A collection of 1 web pages converted to Markdown format. Generated on 2025-11-15 15:03:33.
+[langchain-ai/docs
 
-## Converted Web Pages
+* 100
+* 820](https://github.com/langchain-ai/docs "Go to repository")
 
-### Runtime | LangChain Reference
+* [Get started](https://reference.langchain.com/python/)
+* [LangChain](https://reference.langchain.com/python/langchain/)
+* [LangGraph](https://reference.langchain.com/python/langgraph/)
 
-**Source:** https://reference.langchain.com/python/langgraph/runtime/
+  LangGraph
+  + langgraph
 
-Skip to content 
 
-[ ](https://github.com/langchain-ai/docs/tree/main/reference/python/docs/langgraph/runtime.md "Edit this page")
+
+
+    langgraph
+    - [Graphs](https://reference.langchain.com/python/langgraph/graphs/)
+    - [Functional API](https://reference.langchain.com/python/langgraph/func/)
+    - [Pregel](https://reference.langchain.com/python/langgraph/pregel/)
+    - [Checkpointing](https://reference.langchain.com/python/langgraph/checkpoints/)
+    - [Storage](https://reference.langchain.com/python/langgraph/store/)
+    - [Caching](https://reference.langchain.com/python/langgraph/cache/)
+    - [Types](https://reference.langchain.com/python/langgraph/types/)
+    - Runtime
+
+      [Runtime](https://reference.langchain.com/python/langgraph/runtime/)
+
+
+
+      Table of contents
+      * [Runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime)
+
+        + [context](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.context)
+        + [store](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.store)
+        + [stream\_writer](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.stream_writer)
+        + [previous](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.previous)
+      * [runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime)
+
+        + [get\_runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.get_runtime)
+    - [Config](https://reference.langchain.com/python/langgraph/config/)
+    - [Errors](https://reference.langchain.com/python/langgraph/errors/)
+    - [Constants](https://reference.langchain.com/python/langgraph/constants/)
+    - [Channels](https://reference.langchain.com/python/langgraph/channels/)
+  + Prebuilt
+
+
+
+
+    Prebuilt
+    - [Agents](https://reference.langchain.com/python/langgraph/agents/)
+    - [Supervisor](https://reference.langchain.com/python/langgraph/supervisor/)
+    - [Swarm](https://reference.langchain.com/python/langgraph/swarm/)
+* [Deep Agents](https://reference.langchain.com/python/deepagents/)
+* [Integrations](https://reference.langchain.com/python/integrations/)
+* [LangSmith](https://reference.langchain.com/python/langsmith/)
+
+Table of contents
+
+* [Runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime)
+
+  + [context](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.context)
+  + [store](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.store)
+  + [stream\_writer](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.stream_writer)
+  + [previous](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.previous)
+* [runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime)
+
+  + [get\_runtime](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.get_runtime)
 
 # Runtime
 
-##  `` langgraph.runtime.Runtime `dataclass` ¶
+## langgraph.runtime.Runtime `dataclass` [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime "Copy anchor link to this section for reference")
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[ContextT]`
+Bases: `Generic[ContextT]`
 
 Convenience class that bundles run-scoped context and other runtime utilities.
 
 Added in version v0.6.0
 
 Example:
-    
-    
-    from typing import TypedDict
-    from langgraph.graph import StateGraph
-    from dataclasses import dataclass
-    from langgraph.runtime import Runtime
-    from langgraph.store.memory import InMemoryStore
-    
-    
-    @dataclass
-    class Context:  # (1)!
-        user_id: str
-    
-    
-    class State(TypedDict, total=False):
-        response: str
-    
-    
-    store = InMemoryStore()  # (2)!
-    store.put(("users",), "user_123", {"name": "Alice"})
-    
-    
-    def personalized_greeting(state: State, runtime: Runtime[Context]) -> State:
-        '''Generate personalized greeting using runtime context and store.'''
-        user_id = runtime.context.user_id  # (3)!
-        name = "unknown_user"
-        if runtime.store:
-            if memory := runtime.store.get(("users",), user_id):
-                name = memory.value["name"]
-    
-        response = f"Hello {name}! Nice to see you again."
-        return {"response": response}
-    
-    
-    graph = (
-        StateGraph(state_schema=State, context_schema=Context)
-        .add_node("personalized_greeting", personalized_greeting)
-        .set_entry_point("personalized_greeting")
-        .set_finish_point("personalized_greeting")
-        .compile(store=store)
-    )
-    
-    result = graph.invoke({}, context=Context(user_id="user_123"))
-    print(result)
-    # > {'response': 'Hello Alice! Nice to see you again.'}
-    
 
-  1. Define a schema for the runtime context.
-  2. Create a store to persist memories and other information.
-  3. Use the runtime context to access the `user_id`.
+```
+from typing import TypedDict
+from langgraph.graph import StateGraph
+from dataclasses import dataclass
+from langgraph.runtime import Runtime
+from langgraph.store.memory import InMemoryStore
+
+
+@dataclass
+class Context:  
+    user_id: str
+
+
+class State(TypedDict, total=False):
+    response: str
+
+
+store = InMemoryStore()  
+store.put(("users",), "user_123", {"name": "Alice"})
+
+
+def personalized_greeting(state: State, runtime: Runtime[Context]) -> State:
+    '''Generate personalized greeting using runtime context and store.'''
+    user_id = runtime.context.user_id  
+    name = "unknown_user"
+    if runtime.store:
+        if memory := runtime.store.get(("users",), user_id):
+            name = memory.value["name"]
+
+    response = f"Hello {name}! Nice to see you again."
+    return {"response": response}
+
+
+graph = (
+    StateGraph(state_schema=State, context_schema=Context)
+    .add_node("personalized_greeting", personalized_greeting)
+    .set_entry_point("personalized_greeting")
+    .set_finish_point("personalized_greeting")
+    .compile(store=store)
+)
+
+result = graph.invoke({}, context=Context(user_id="user_123"))
+print(result)
+# > {'response': 'Hello Alice! Nice to see you again.'}
+```
 
 
 
-###  `` context `class-attribute` `instance-attribute` ¶
-    
-    
-    context: ContextT = [field](https://docs.python.org/3/library/dataclasses.html#dataclasses.field "<code>dataclasses.field</code>")(default=None)
-    
+### context `class-attribute` `instance-attribute` [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.context "Copy anchor link to this section for reference")
+
+```
+context: ContextT = field(default=None)
+```
 
 Static context for the graph run, like `user_id`, `db_conn`, etc.
 
 Can also be thought of as 'run dependencies'.
 
-###  `` store `class-attribute` `instance-attribute` ¶
-    
-    
-    store: [BaseStore](../store/#langgraph.store.base.BaseStore "<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">BaseStore</span> \(<code>langgraph.store.base.BaseStore</code>\)") | None = [field](https://docs.python.org/3/library/dataclasses.html#dataclasses.field "<code>dataclasses.field</code>")(default=None)
-    
+### store `class-attribute` `instance-attribute` [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.store "Copy anchor link to this section for reference")
+
+```
+store: BaseStore | None = field(default=None)
+```
 
 Store for the graph run, enabling persistence and memory.
 
-###  `` stream_writer `class-attribute` `instance-attribute` ¶
-    
-    
-    stream_writer: [StreamWriter](../types/#langgraph.types.StreamWriter "<code class="doc-symbol doc-symbol-heading doc-symbol-attribute"></code>            <span class="doc doc-object-name doc-attribute-name">StreamWriter</span>
-    
-    
-      <span class="doc doc-labels">
-          <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
-      </span> \(<code>langgraph.types.StreamWriter</code>\)") = [field](https://docs.python.org/3/library/dataclasses.html#dataclasses.field "<code>dataclasses.field</code>")(default=_no_op_stream_writer)
-    
+### stream\_writer `class-attribute` `instance-attribute` [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.stream_writer "Copy anchor link to this section for reference")
+
+```
+stream_writer: StreamWriter = field(default=_no_op_stream_writer)
+```
 
 Function that writes to the custom stream.
 
-###  `` previous `class-attribute` `instance-attribute` ¶
-    
-    
-    previous: [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>") = [field](https://docs.python.org/3/library/dataclasses.html#dataclasses.field "<code>dataclasses.field</code>")(default=None)
-    
+### previous `class-attribute` `instance-attribute` [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.Runtime.previous "Copy anchor link to this section for reference")
+
+```
+previous: Any = field(default=None)
+```
 
 The previous return value for the given thread.
 
 Only available with the functional API when a checkpointer is provided.
 
-##  `` langgraph.runtime ¶
+## langgraph.runtime [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime "Copy anchor link to this section for reference")
 
-FUNCTION | DESCRIPTION  
----|---  
-`get_runtime` |  Get the runtime for the current graph run.  
-  
-###  `` get_runtime ¶
-    
-    
-    get_runtime(context_schema: [type](https://docs.python.org/3/library/functions.html#type)[ContextT] | None = None) -> Runtime[ContextT]
-    
+| FUNCTION | DESCRIPTION |
+| --- | --- |
+| `get_runtime` | Get the runtime for the current graph run. |
+
+### get\_runtime [¶](https://reference.langchain.com/python/langgraph/runtime/#langgraph.runtime.get_runtime "Copy anchor link to this section for reference")
+
+```
+get_runtime(context_schema: type[ContextT] | None = None) -> Runtime[ContextT]
+```
 
 Get the runtime for the current graph run.
 
-PARAMETER | DESCRIPTION  
----|---  
-`context_schema` |  Optional schema used for type hinting the return type of the runtime. **TYPE:** `[type](https://docs.python.org/3/library/functions.html#type)[ContextT] | None` **DEFAULT:** `None`  
-RETURNS | DESCRIPTION  
----|---  
-`Runtime[ContextT]` |  The runtime for the current graph run.  
-  
-Back to top
+| PARAMETER | DESCRIPTION |
+| --- | --- |
+| `context_schema` | Optional schema used for type hinting the return type of the runtime.  **TYPE:** `type[ContextT] | None`  **DEFAULT:** `None` |
 
----
+| RETURNS | DESCRIPTION |
+| --- | --- |
+| `Runtime[ContextT]` | The runtime for the current graph run. |
+
+Back to top

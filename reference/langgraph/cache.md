@@ -1,239 +1,349 @@
-# Web Content Collection
+[![logo](https://reference.langchain.com/python/static/brand/reference-light.svg)
+![logo](https://reference.langchain.com/python/static/brand/reference-dark.svg)](https://reference.langchain.com/python/ "LangChain Reference")
+LangChain Reference
 
-> A collection of 1 web pages converted to Markdown format. Generated on 2025-11-15 15:03:32.
+[langchain-ai/docs
 
-## Converted Web Pages
+* 100
+* 820](https://github.com/langchain-ai/docs "Go to repository")
 
-### Caching (LangGraph) | LangChain Reference
+* [Get started](https://reference.langchain.com/python/)
+* [LangChain](https://reference.langchain.com/python/langchain/)
+* [LangGraph](https://reference.langchain.com/python/langgraph/)
 
-**Source:** https://reference.langchain.com/python/langgraph/cache/
+  LangGraph
+  + langgraph
 
-Skip to content 
 
-[ ](https://github.com/langchain-ai/docs/tree/main/reference/python/docs/langgraph/cache.md "Edit this page")
+
+
+    langgraph
+    - [Graphs](https://reference.langchain.com/python/langgraph/graphs/)
+    - [Functional API](https://reference.langchain.com/python/langgraph/func/)
+    - [Pregel](https://reference.langchain.com/python/langgraph/pregel/)
+    - [Checkpointing](https://reference.langchain.com/python/langgraph/checkpoints/)
+    - [Storage](https://reference.langchain.com/python/langgraph/store/)
+    - Caching
+
+      [Caching](https://reference.langchain.com/python/langgraph/cache/)
+
+
+
+      Table of contents
+      * [base](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base)
+
+        + [BaseCache](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache)
+
+          - [\_\_init\_\_](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.__init__)
+          - [get](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.get)
+          - [aget](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aget)
+          - [set](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.set)
+          - [aset](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aset)
+          - [clear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.clear)
+          - [aclear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aclear)
+      * [memory](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory)
+
+        + [InMemoryCache](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache)
+
+          - [\_\_init\_\_](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.__init__)
+          - [get](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.get)
+          - [aget](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aget)
+          - [set](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.set)
+          - [aset](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aset)
+          - [clear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.clear)
+          - [aclear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aclear)
+      * [sqlite](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite)
+
+        + [SqliteCache](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache)
+
+          - [\_\_init\_\_](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.__init__)
+          - [get](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.get)
+          - [aget](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aget)
+          - [set](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.set)
+          - [aset](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aset)
+          - [clear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.clear)
+          - [aclear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aclear)
+    - [Types](https://reference.langchain.com/python/langgraph/types/)
+    - [Runtime](https://reference.langchain.com/python/langgraph/runtime/)
+    - [Config](https://reference.langchain.com/python/langgraph/config/)
+    - [Errors](https://reference.langchain.com/python/langgraph/errors/)
+    - [Constants](https://reference.langchain.com/python/langgraph/constants/)
+    - [Channels](https://reference.langchain.com/python/langgraph/channels/)
+  + Prebuilt
+
+
+
+
+    Prebuilt
+    - [Agents](https://reference.langchain.com/python/langgraph/agents/)
+    - [Supervisor](https://reference.langchain.com/python/langgraph/supervisor/)
+    - [Swarm](https://reference.langchain.com/python/langgraph/swarm/)
+* [Deep Agents](https://reference.langchain.com/python/deepagents/)
+* [Integrations](https://reference.langchain.com/python/integrations/)
+* [LangSmith](https://reference.langchain.com/python/langsmith/)
+
+Table of contents
+
+* [base](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base)
+
+  + [BaseCache](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache)
+
+    - [\_\_init\_\_](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.__init__)
+    - [get](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.get)
+    - [aget](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aget)
+    - [set](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.set)
+    - [aset](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aset)
+    - [clear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.clear)
+    - [aclear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aclear)
+* [memory](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory)
+
+  + [InMemoryCache](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache)
+
+    - [\_\_init\_\_](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.__init__)
+    - [get](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.get)
+    - [aget](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aget)
+    - [set](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.set)
+    - [aset](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aset)
+    - [clear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.clear)
+    - [aclear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aclear)
+* [sqlite](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite)
+
+  + [SqliteCache](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache)
+
+    - [\_\_init\_\_](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.__init__)
+    - [get](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.get)
+    - [aget](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aget)
+    - [set](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.set)
+    - [aset](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aset)
+    - [clear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.clear)
+    - [aclear](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aclear)
 
 # Caching
 
-##  `` langgraph.cache.base ¶
+## langgraph.cache.base [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base "Copy anchor link to this section for reference")
 
-###  `` BaseCache ¶
+### BaseCache [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache "Copy anchor link to this section for reference")
 
-Bases: `[ABC](https://docs.python.org/3/library/abc.html#abc.ABC "<code>abc.ABC</code>")`, `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[ValueT]`
+Bases: `ABC`, `Generic[ValueT]`
 
 Base class for a cache.
 
-METHOD | DESCRIPTION  
----|---  
-`__init__` |  Initialize the cache with a serializer.  
-`get` |  Get the cached values for the given keys.  
-`aget` |  Asynchronously get the cached values for the given keys.  
-`set` |  Set the cached values for the given keys and TTLs.  
-`aset` |  Asynchronously set the cached values for the given keys and TTLs.  
-`clear` |  Delete the cached values for the given namespaces.  
-`aclear` |  Asynchronously delete the cached values for the given namespaces.  
-  
-####  `` __init__ ¶
-    
-    
-    __init__(*, serde: [SerializerProtocol](../checkpoints/#langgraph.checkpoint.serde.base.SerializerProtocol "<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">SerializerProtocol</span> \(<code>langgraph.checkpoint.serde.base.SerializerProtocol</code>\)") | None = None) -> None
-    
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `__init__` | Initialize the cache with a serializer. |
+| `get` | Get the cached values for the given keys. |
+| `aget` | Asynchronously get the cached values for the given keys. |
+| `set` | Set the cached values for the given keys and TTLs. |
+| `aset` | Asynchronously set the cached values for the given keys and TTLs. |
+| `clear` | Delete the cached values for the given namespaces. |
+| `aclear` | Asynchronously delete the cached values for the given namespaces. |
+
+#### \_\_init\_\_ [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.__init__ "Copy anchor link to this section for reference")
+
+```
+__init__(*, serde: SerializerProtocol | None = None) -> None
+```
 
 Initialize the cache with a serializer.
 
-####  `` get `abstractmethod` ¶
-    
-    
-    get(keys: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[FullKey]) -> [dict](https://docs.python.org/3/library/stdtypes.html#dict)[FullKey, ValueT]
-    
+#### get `abstractmethod` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.get "Copy anchor link to this section for reference")
+
+```
+get(keys: Sequence[FullKey]) -> dict[FullKey, ValueT]
+```
 
 Get the cached values for the given keys.
 
-####  `` aget `abstractmethod` `async` ¶
-    
-    
-    aget(keys: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[FullKey]) -> [dict](https://docs.python.org/3/library/stdtypes.html#dict)[FullKey, ValueT]
-    
+#### aget `abstractmethod` `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aget "Copy anchor link to this section for reference")
+
+```
+aget(keys: Sequence[FullKey]) -> dict[FullKey, ValueT]
+```
 
 Asynchronously get the cached values for the given keys.
 
-####  `` set `abstractmethod` ¶
-    
-    
-    set(pairs: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "<code>collections.abc.Mapping</code>")[FullKey, [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[ValueT, [int](https://docs.python.org/3/library/functions.html#int) | None]]) -> None
-    
+#### set `abstractmethod` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.set "Copy anchor link to this section for reference")
+
+```
+set(pairs: Mapping[FullKey, tuple[ValueT, int | None]]) -> None
+```
 
 Set the cached values for the given keys and TTLs.
 
-####  `` aset `abstractmethod` `async` ¶
-    
-    
-    aset(pairs: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "<code>collections.abc.Mapping</code>")[FullKey, [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[ValueT, [int](https://docs.python.org/3/library/functions.html#int) | None]]) -> None
-    
+#### aset `abstractmethod` `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aset "Copy anchor link to this section for reference")
+
+```
+aset(pairs: Mapping[FullKey, tuple[ValueT, int | None]]) -> None
+```
 
 Asynchronously set the cached values for the given keys and TTLs.
 
-####  `` clear `abstractmethod` ¶
-    
-    
-    clear(namespaces: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Namespace] | None = None) -> None
-    
+#### clear `abstractmethod` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.clear "Copy anchor link to this section for reference")
 
-Delete the cached values for the given namespaces. If no namespaces are provided, clear all cached values.
+```
+clear(namespaces: Sequence[Namespace] | None = None) -> None
+```
 
-####  `` aclear `abstractmethod` `async` ¶
-    
-    
-    aclear(namespaces: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Namespace] | None = None) -> None
-    
+Delete the cached values for the given namespaces.
+If no namespaces are provided, clear all cached values.
 
-Asynchronously delete the cached values for the given namespaces. If no namespaces are provided, clear all cached values.
+#### aclear `abstractmethod` `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.base.BaseCache.aclear "Copy anchor link to this section for reference")
 
-##  `` langgraph.cache.memory ¶
+```
+aclear(namespaces: Sequence[Namespace] | None = None) -> None
+```
 
-###  `` InMemoryCache ¶
+Asynchronously delete the cached values for the given namespaces.
+If no namespaces are provided, clear all cached values.
+
+## langgraph.cache.memory [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory "Copy anchor link to this section for reference")
+
+### InMemoryCache [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache "Copy anchor link to this section for reference")
 
 Bases: `BaseCache[ValueT]`
 
-METHOD | DESCRIPTION  
----|---  
-`__init__` |  Initialize the cache with a serializer.  
-`get` |  Get the cached values for the given keys.  
-`aget` |  Asynchronously get the cached values for the given keys.  
-`set` |  Set the cached values for the given keys.  
-`aset` |  Asynchronously set the cached values for the given keys.  
-`clear` |  Delete the cached values for the given namespaces.  
-`aclear` |  Asynchronously delete the cached values for the given namespaces.  
-  
-####  `` __init__ ¶
-    
-    
-    __init__(*, serde: [SerializerProtocol](../checkpoints/#langgraph.checkpoint.serde.base.SerializerProtocol "<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">SerializerProtocol</span> \(<code>langgraph.checkpoint.serde.base.SerializerProtocol</code>\)") | None = None)
-    
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `__init__` | Initialize the cache with a serializer. |
+| `get` | Get the cached values for the given keys. |
+| `aget` | Asynchronously get the cached values for the given keys. |
+| `set` | Set the cached values for the given keys. |
+| `aset` | Asynchronously set the cached values for the given keys. |
+| `clear` | Delete the cached values for the given namespaces. |
+| `aclear` | Asynchronously delete the cached values for the given namespaces. |
+
+#### \_\_init\_\_ [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.__init__ "Copy anchor link to this section for reference")
+
+```
+__init__(*, serde: SerializerProtocol | None = None)
+```
 
 Initialize the cache with a serializer.
 
-####  `` get ¶
-    
-    
-    get(keys: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[FullKey]) -> [dict](https://docs.python.org/3/library/stdtypes.html#dict)[FullKey, ValueT]
-    
+#### get [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.get "Copy anchor link to this section for reference")
+
+```
+get(keys: Sequence[FullKey]) -> dict[FullKey, ValueT]
+```
 
 Get the cached values for the given keys.
 
-####  `` aget `async` ¶
-    
-    
-    aget(keys: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[FullKey]) -> [dict](https://docs.python.org/3/library/stdtypes.html#dict)[FullKey, ValueT]
-    
+#### aget `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aget "Copy anchor link to this section for reference")
+
+```
+aget(keys: Sequence[FullKey]) -> dict[FullKey, ValueT]
+```
 
 Asynchronously get the cached values for the given keys.
 
-####  `` set ¶
-    
-    
-    set(keys: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "<code>collections.abc.Mapping</code>")[FullKey, [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[ValueT, [int](https://docs.python.org/3/library/functions.html#int) | None]]) -> None
-    
+#### set [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.set "Copy anchor link to this section for reference")
+
+```
+set(keys: Mapping[FullKey, tuple[ValueT, int | None]]) -> None
+```
 
 Set the cached values for the given keys.
 
-####  `` aset `async` ¶
-    
-    
-    aset(keys: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "<code>collections.abc.Mapping</code>")[FullKey, [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[ValueT, [int](https://docs.python.org/3/library/functions.html#int) | None]]) -> None
-    
+#### aset `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aset "Copy anchor link to this section for reference")
+
+```
+aset(keys: Mapping[FullKey, tuple[ValueT, int | None]]) -> None
+```
 
 Asynchronously set the cached values for the given keys.
 
-####  `` clear ¶
-    
-    
-    clear(namespaces: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Namespace] | None = None) -> None
-    
+#### clear [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.clear "Copy anchor link to this section for reference")
 
-Delete the cached values for the given namespaces. If no namespaces are provided, clear all cached values.
+```
+clear(namespaces: Sequence[Namespace] | None = None) -> None
+```
 
-####  `` aclear `async` ¶
-    
-    
-    aclear(namespaces: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Namespace] | None = None) -> None
-    
+Delete the cached values for the given namespaces.
+If no namespaces are provided, clear all cached values.
 
-Asynchronously delete the cached values for the given namespaces. If no namespaces are provided, clear all cached values.
+#### aclear `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.memory.InMemoryCache.aclear "Copy anchor link to this section for reference")
 
-##  `` langgraph.cache.sqlite ¶
+```
+aclear(namespaces: Sequence[Namespace] | None = None) -> None
+```
 
-###  `` SqliteCache ¶
+Asynchronously delete the cached values for the given namespaces.
+If no namespaces are provided, clear all cached values.
+
+## langgraph.cache.sqlite [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite "Copy anchor link to this section for reference")
+
+### SqliteCache [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache "Copy anchor link to this section for reference")
 
 Bases: `BaseCache[ValueT]`
 
 File-based cache using SQLite.
 
-METHOD | DESCRIPTION  
----|---  
-`__init__` |  Initialize the cache with a file path.  
-`get` |  Get the cached values for the given keys.  
-`aget` |  Asynchronously get the cached values for the given keys.  
-`set` |  Set the cached values for the given keys and TTLs.  
-`aset` |  Asynchronously set the cached values for the given keys and TTLs.  
-`clear` |  Delete the cached values for the given namespaces.  
-`aclear` |  Asynchronously delete the cached values for the given namespaces.  
-  
-####  `` __init__ ¶
-    
-    
-    __init__(*, path: [str](https://docs.python.org/3/library/stdtypes.html#str), serde: [SerializerProtocol](../checkpoints/#langgraph.checkpoint.serde.base.SerializerProtocol "<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">SerializerProtocol</span> \(<code>langgraph.checkpoint.serde.base.SerializerProtocol</code>\)") | None = None) -> None
-    
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `__init__` | Initialize the cache with a file path. |
+| `get` | Get the cached values for the given keys. |
+| `aget` | Asynchronously get the cached values for the given keys. |
+| `set` | Set the cached values for the given keys and TTLs. |
+| `aset` | Asynchronously set the cached values for the given keys and TTLs. |
+| `clear` | Delete the cached values for the given namespaces. |
+| `aclear` | Asynchronously delete the cached values for the given namespaces. |
+
+#### \_\_init\_\_ [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.__init__ "Copy anchor link to this section for reference")
+
+```
+__init__(*, path: str, serde: SerializerProtocol | None = None) -> None
+```
 
 Initialize the cache with a file path.
 
-####  `` get ¶
-    
-    
-    get(keys: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[FullKey]) -> [dict](https://docs.python.org/3/library/stdtypes.html#dict)[FullKey, ValueT]
-    
+#### get [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.get "Copy anchor link to this section for reference")
+
+```
+get(keys: Sequence[FullKey]) -> dict[FullKey, ValueT]
+```
 
 Get the cached values for the given keys.
 
-####  `` aget `async` ¶
-    
-    
-    aget(keys: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[FullKey]) -> [dict](https://docs.python.org/3/library/stdtypes.html#dict)[FullKey, ValueT]
-    
+#### aget `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aget "Copy anchor link to this section for reference")
+
+```
+aget(keys: Sequence[FullKey]) -> dict[FullKey, ValueT]
+```
 
 Asynchronously get the cached values for the given keys.
 
-####  `` set ¶
-    
-    
-    set(mapping: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "<code>collections.abc.Mapping</code>")[FullKey, [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[ValueT, [int](https://docs.python.org/3/library/functions.html#int) | None]]) -> None
-    
+#### set [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.set "Copy anchor link to this section for reference")
+
+```
+set(mapping: Mapping[FullKey, tuple[ValueT, int | None]]) -> None
+```
 
 Set the cached values for the given keys and TTLs.
 
-####  `` aset `async` ¶
-    
-    
-    aset(mapping: [Mapping](https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping "<code>collections.abc.Mapping</code>")[FullKey, [tuple](https://docs.python.org/3/library/stdtypes.html#tuple)[ValueT, [int](https://docs.python.org/3/library/functions.html#int) | None]]) -> None
-    
+#### aset `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aset "Copy anchor link to this section for reference")
+
+```
+aset(mapping: Mapping[FullKey, tuple[ValueT, int | None]]) -> None
+```
 
 Asynchronously set the cached values for the given keys and TTLs.
 
-####  `` clear ¶
-    
-    
-    clear(namespaces: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Namespace] | None = None) -> None
-    
+#### clear [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.clear "Copy anchor link to this section for reference")
 
-Delete the cached values for the given namespaces. If no namespaces are provided, clear all cached values.
+```
+clear(namespaces: Sequence[Namespace] | None = None) -> None
+```
 
-####  `` aclear `async` ¶
-    
-    
-    aclear(namespaces: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Namespace] | None = None) -> None
-    
+Delete the cached values for the given namespaces.
+If no namespaces are provided, clear all cached values.
 
-Asynchronously delete the cached values for the given namespaces. If no namespaces are provided, clear all cached values.
+#### aclear `async` [¶](https://reference.langchain.com/python/langgraph/cache/#langgraph.cache.sqlite.SqliteCache.aclear "Copy anchor link to this section for reference")
+
+```
+aclear(namespaces: Sequence[Namespace] | None = None) -> None
+```
+
+Asynchronously delete the cached values for the given namespaces.
+If no namespaces are provided, clear all cached values.
 
 Back to top
-
----

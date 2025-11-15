@@ -1,651 +1,923 @@
-# Web Content Collection
+[![logo](https://reference.langchain.com/python/static/brand/reference-light.svg)
+![logo](https://reference.langchain.com/python/static/brand/reference-dark.svg)](https://reference.langchain.com/python/ "LangChain Reference")
+LangChain Reference
 
-> A collection of 1 web pages converted to Markdown format. Generated on 2025-11-15 15:03:33.
+[langchain-ai/docs
 
-## Converted Web Pages
+* 100
+* 820](https://github.com/langchain-ai/docs "Go to repository")
 
-### Channels | LangChain Reference
+* [Get started](https://reference.langchain.com/python/)
+* [LangChain](https://reference.langchain.com/python/langchain/)
+* [LangGraph](https://reference.langchain.com/python/langgraph/)
 
-**Source:** https://reference.langchain.com/python/langgraph/channels/
+  LangGraph
+  + langgraph
 
-Skip to content 
 
-[ ](https://github.com/langchain-ai/docs/tree/main/reference/python/docs/langgraph/channels.md "Edit this page")
+
+
+    langgraph
+    - [Graphs](https://reference.langchain.com/python/langgraph/graphs/)
+    - [Functional API](https://reference.langchain.com/python/langgraph/func/)
+    - [Pregel](https://reference.langchain.com/python/langgraph/pregel/)
+    - [Checkpointing](https://reference.langchain.com/python/langgraph/checkpoints/)
+    - [Storage](https://reference.langchain.com/python/langgraph/store/)
+    - [Caching](https://reference.langchain.com/python/langgraph/cache/)
+    - [Types](https://reference.langchain.com/python/langgraph/types/)
+    - [Runtime](https://reference.langchain.com/python/langgraph/runtime/)
+    - [Config](https://reference.langchain.com/python/langgraph/config/)
+    - [Errors](https://reference.langchain.com/python/langgraph/errors/)
+    - [Constants](https://reference.langchain.com/python/langgraph/constants/)
+    - Channels
+
+      [Channels](https://reference.langchain.com/python/langgraph/channels/)
+
+
+
+      Table of contents
+      * [base](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base)
+
+        + [BaseChannel](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel)
+
+          - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.ValueType)
+          - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.UpdateType)
+          - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.copy)
+          - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.checkpoint)
+          - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.from_checkpoint)
+          - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.get)
+          - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.is_available)
+          - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.update)
+          - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.consume)
+          - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.finish)
+      * [channels](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels)
+
+        + [Topic](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic)
+
+          - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.ValueType)
+          - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.UpdateType)
+          - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.consume)
+          - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.finish)
+          - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.copy)
+          - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.checkpoint)
+          - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.from_checkpoint)
+          - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.update)
+          - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.get)
+          - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.is_available)
+        + [LastValue](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue)
+
+          - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.ValueType)
+          - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.UpdateType)
+          - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.consume)
+          - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.finish)
+          - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.copy)
+          - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.from_checkpoint)
+          - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.update)
+          - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.get)
+          - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.is_available)
+          - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.checkpoint)
+        + [EphemeralValue](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue)
+
+          - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.ValueType)
+          - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.UpdateType)
+          - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.consume)
+          - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.finish)
+          - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.copy)
+          - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.from_checkpoint)
+          - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.update)
+          - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.get)
+          - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.is_available)
+          - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.checkpoint)
+        + [BinaryOperatorAggregate](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate)
+
+          - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.ValueType)
+          - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.UpdateType)
+          - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.consume)
+          - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.finish)
+          - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.copy)
+          - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.from_checkpoint)
+          - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.update)
+          - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.get)
+          - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.is_available)
+          - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.checkpoint)
+        + [AnyValue](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue)
+
+          - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.ValueType)
+          - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.UpdateType)
+          - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.consume)
+          - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.finish)
+          - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.copy)
+          - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.from_checkpoint)
+          - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.update)
+          - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.get)
+          - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.is_available)
+          - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.checkpoint)
+  + Prebuilt
+
+
+
+
+    Prebuilt
+    - [Agents](https://reference.langchain.com/python/langgraph/agents/)
+    - [Supervisor](https://reference.langchain.com/python/langgraph/supervisor/)
+    - [Swarm](https://reference.langchain.com/python/langgraph/swarm/)
+* [Deep Agents](https://reference.langchain.com/python/deepagents/)
+* [Integrations](https://reference.langchain.com/python/integrations/)
+* [LangSmith](https://reference.langchain.com/python/langsmith/)
+
+Table of contents
+
+* [base](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base)
+
+  + [BaseChannel](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel)
+
+    - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.ValueType)
+    - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.UpdateType)
+    - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.copy)
+    - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.checkpoint)
+    - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.from_checkpoint)
+    - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.get)
+    - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.is_available)
+    - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.update)
+    - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.consume)
+    - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.finish)
+* [channels](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels)
+
+  + [Topic](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic)
+
+    - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.ValueType)
+    - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.UpdateType)
+    - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.consume)
+    - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.finish)
+    - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.copy)
+    - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.checkpoint)
+    - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.from_checkpoint)
+    - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.update)
+    - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.get)
+    - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.is_available)
+  + [LastValue](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue)
+
+    - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.ValueType)
+    - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.UpdateType)
+    - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.consume)
+    - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.finish)
+    - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.copy)
+    - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.from_checkpoint)
+    - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.update)
+    - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.get)
+    - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.is_available)
+    - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.checkpoint)
+  + [EphemeralValue](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue)
+
+    - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.ValueType)
+    - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.UpdateType)
+    - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.consume)
+    - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.finish)
+    - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.copy)
+    - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.from_checkpoint)
+    - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.update)
+    - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.get)
+    - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.is_available)
+    - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.checkpoint)
+  + [BinaryOperatorAggregate](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate)
+
+    - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.ValueType)
+    - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.UpdateType)
+    - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.consume)
+    - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.finish)
+    - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.copy)
+    - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.from_checkpoint)
+    - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.update)
+    - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.get)
+    - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.is_available)
+    - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.checkpoint)
+  + [AnyValue](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue)
+
+    - [ValueType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.ValueType)
+    - [UpdateType](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.UpdateType)
+    - [consume](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.consume)
+    - [finish](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.finish)
+    - [copy](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.copy)
+    - [from\_checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.from_checkpoint)
+    - [update](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.update)
+    - [get](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.get)
+    - [is\_available](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.is_available)
+    - [checkpoint](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.checkpoint)
 
 # Channels
 
-##  `` langgraph.channels.base ¶
+## langgraph.channels.base [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base "Copy anchor link to this section for reference")
 
-###  `` BaseChannel ¶
+### BaseChannel [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel "Copy anchor link to this section for reference")
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[Value, Update, Checkpoint]`, `[ABC](https://docs.python.org/3/library/abc.html#abc.ABC "<code>abc.ABC</code>")`
+Bases: `Generic[Value, Update, Checkpoint]`, `ABC`
 
 Base class for all channels.
 
-METHOD | DESCRIPTION  
----|---  
-`copy` |  Return a copy of the channel.  
-`checkpoint` |  Return a serializable representation of the channel's current state.  
-`from_checkpoint` |  Return a new identical channel, optionally initialized from a checkpoint.  
-`get` |  Return the current value of the channel.  
-`is_available` |  Return `True` if the channel is available (not empty), `False` otherwise.  
-`update` |  Update the channel's value with the given sequence of updates.  
-`consume` |  Notify the channel that a subscribed task ran. By default, no-op.  
-`finish` |  Notify the channel that the Pregel run is finishing. By default, no-op.  
-  
-####  `` ValueType `abstractmethod` `property` ¶
-    
-    
-    ValueType: [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>")
-    
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `copy` | Return a copy of the channel. |
+| `checkpoint` | Return a serializable representation of the channel's current state. |
+| `from_checkpoint` | Return a new identical channel, optionally initialized from a checkpoint. |
+| `get` | Return the current value of the channel. |
+| `is_available` | Return `True` if the channel is available (not empty), `False` otherwise. |
+| `update` | Update the channel's value with the given sequence of updates. |
+| `consume` | Notify the channel that a subscribed task ran. By default, no-op. |
+| `finish` | Notify the channel that the Pregel run is finishing. By default, no-op. |
+
+#### ValueType `abstractmethod` `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.ValueType "Copy anchor link to this section for reference")
+
+```
+ValueType: Any
+```
 
 The type of the value stored in the channel.
 
-####  `` UpdateType `abstractmethod` `property` ¶
-    
-    
-    UpdateType: [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>")
-    
+#### UpdateType `abstractmethod` `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.UpdateType "Copy anchor link to this section for reference")
+
+```
+UpdateType: Any
+```
 
 The type of the update received by the channel.
 
-####  `` copy ¶
-    
-    
-    copy() -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### copy [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.copy "Copy anchor link to this section for reference")
 
-Return a copy of the channel. By default, delegates to `checkpoint()` and `from_checkpoint()`. Subclasses can override this method with a more efficient implementation.
+```
+copy() -> Self
+```
 
-####  `` checkpoint ¶
-    
-    
-    checkpoint() -> Checkpoint | [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>")
-    
+Return a copy of the channel.
+By default, delegates to `checkpoint()` and `from_checkpoint()`.
+Subclasses can override this method with a more efficient implementation.
 
-Return a serializable representation of the channel's current state. Raises `EmptyChannelError` if the channel is empty (never updated yet), or doesn't support checkpoints.
+#### checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.checkpoint "Copy anchor link to this section for reference")
 
-####  `` from_checkpoint `abstractmethod` ¶
-    
-    
-    from_checkpoint(checkpoint: Checkpoint | [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>")) -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+```
+checkpoint() -> Checkpoint | Any
+```
 
-Return a new identical channel, optionally initialized from a checkpoint. If the checkpoint contains complex data structures, they should be copied.
+Return a serializable representation of the channel's current state.
+Raises `EmptyChannelError` if the channel is empty (never updated yet),
+or doesn't support checkpoints.
 
-####  `` get `abstractmethod` ¶
-    
-    
-    get() -> Value
-    
+#### from\_checkpoint `abstractmethod` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.from_checkpoint "Copy anchor link to this section for reference")
+
+```
+from_checkpoint(checkpoint: Checkpoint | Any) -> Self
+```
+
+Return a new identical channel, optionally initialized from a checkpoint.
+If the checkpoint contains complex data structures, they should be copied.
+
+#### get `abstractmethod` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.get "Copy anchor link to this section for reference")
+
+```
+get() -> Value
+```
 
 Return the current value of the channel.
 
 Raises `EmptyChannelError` if the channel is empty (never updated yet).
 
-####  `` is_available ¶
-    
-    
-    is_available() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### is\_available [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.is_available "Copy anchor link to this section for reference")
 
-Return `True` if the channel is available (not empty), `False` otherwise. Subclasses should override this method to provide a more efficient implementation than calling `get()` and catching `EmptyChannelError`.
+```
+is_available() -> bool
+```
 
-####  `` update `abstractmethod` ¶
-    
-    
-    update(values: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Update]) -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+Return `True` if the channel is available (not empty), `False` otherwise.
+Subclasses should override this method to provide a more efficient
+implementation than calling `get()` and catching `EmptyChannelError`.
 
-Update the channel's value with the given sequence of updates. The order of the updates in the sequence is arbitrary. This method is called by Pregel for all channels at the end of each step. If there are no updates, it is called with an empty sequence. Raises `InvalidUpdateError` if the sequence of updates is invalid. Returns `True` if the channel was updated, `False` otherwise.
+#### update `abstractmethod` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.update "Copy anchor link to this section for reference")
 
-####  `` consume ¶
-    
-    
-    consume() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+```
+update(values: Sequence[Update]) -> bool
+```
 
-Notify the channel that a subscribed task ran. By default, no-op. A channel can use this method to modify its state, preventing the value from being consumed again.
+Update the channel's value with the given sequence of updates.
+The order of the updates in the sequence is arbitrary.
+This method is called by Pregel for all channels at the end of each step.
+If there are no updates, it is called with an empty sequence.
+Raises `InvalidUpdateError` if the sequence of updates is invalid.
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### consume [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.consume "Copy anchor link to this section for reference")
+
+```
+consume() -> bool
+```
+
+Notify the channel that a subscribed task ran. By default, no-op.
+A channel can use this method to modify its state, preventing the value
+from being consumed again.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-####  `` finish ¶
-    
-    
-    finish() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### finish [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.base.BaseChannel.finish "Copy anchor link to this section for reference")
 
-Notify the channel that the Pregel run is finishing. By default, no-op. A channel can use this method to modify its state, preventing finish.
+```
+finish() -> bool
+```
+
+Notify the channel that the Pregel run is finishing. By default, no-op.
+A channel can use this method to modify its state, preventing finish.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-##  `` langgraph.channels ¶
+## langgraph.channels [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels "Copy anchor link to this section for reference")
 
-###  `` Topic ¶
+### Topic [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic "Copy anchor link to this section for reference")
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[Value]`, `BaseChannel[[Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value], Value | [list](https://docs.python.org/3/library/stdtypes.html#list)[Value], [list](https://docs.python.org/3/library/stdtypes.html#list)[Value]]`
+Bases: `Generic[Value]`, `BaseChannel[Sequence[Value], Value | list[Value], list[Value]]`
 
 A configurable PubSub Topic.
 
-PARAMETER | DESCRIPTION  
----|---  
-`typ` |  The type of the value stored in the channel. **TYPE:** `[type](https://docs.python.org/3/library/functions.html#type)[Value]`  
-`accumulate` |  Whether to accumulate values across steps. If `False`, the channel will be emptied after each step. **TYPE:** `[bool](https://docs.python.org/3/library/functions.html#bool)` **DEFAULT:** `False`  
-METHOD | DESCRIPTION  
----|---  
-`consume` |  Notify the channel that a subscribed task ran. By default, no-op.  
-`finish` |  Notify the channel that the Pregel run is finishing. By default, no-op.  
-`copy` |  Return a copy of the channel.  
-`checkpoint` |  Return a serializable representation of the channel's current state.  
-`from_checkpoint` |  Return a new identical channel, optionally initialized from a checkpoint.  
-`update` |  Update the channel's value with the given sequence of updates.  
-`get` |  Return the current value of the channel.  
-`is_available` |  Return `True` if the channel is available (not empty), `False` otherwise.  
-  
-####  `` ValueType `property` ¶
-    
-    
-    ValueType: [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>")
-    
+| PARAMETER | DESCRIPTION |
+| --- | --- |
+| `typ` | The type of the value stored in the channel.  **TYPE:** `type[Value]` |
+| `accumulate` | Whether to accumulate values across steps. If `False`, the channel will be emptied after each step.  **TYPE:** `bool`  **DEFAULT:** `False` |
+
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `consume` | Notify the channel that a subscribed task ran. By default, no-op. |
+| `finish` | Notify the channel that the Pregel run is finishing. By default, no-op. |
+| `copy` | Return a copy of the channel. |
+| `checkpoint` | Return a serializable representation of the channel's current state. |
+| `from_checkpoint` | Return a new identical channel, optionally initialized from a checkpoint. |
+| `update` | Update the channel's value with the given sequence of updates. |
+| `get` | Return the current value of the channel. |
+| `is_available` | Return `True` if the channel is available (not empty), `False` otherwise. |
+
+#### ValueType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.ValueType "Copy anchor link to this section for reference")
+
+```
+ValueType: Any
+```
 
 The type of the value stored in the channel.
 
-####  `` UpdateType `property` ¶
-    
-    
-    UpdateType: [Any](https://docs.python.org/3/library/typing.html#typing.Any "<code>typing.Any</code>")
-    
+#### UpdateType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.UpdateType "Copy anchor link to this section for reference")
+
+```
+UpdateType: Any
+```
 
 The type of the update received by the channel.
 
-####  `` consume ¶
-    
-    
-    consume() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### consume [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.consume "Copy anchor link to this section for reference")
 
-Notify the channel that a subscribed task ran. By default, no-op. A channel can use this method to modify its state, preventing the value from being consumed again.
+```
+consume() -> bool
+```
 
-Returns `True` if the channel was updated, `False` otherwise.
-
-####  `` finish ¶
-    
-    
-    finish() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
-
-Notify the channel that the Pregel run is finishing. By default, no-op. A channel can use this method to modify its state, preventing finish.
+Notify the channel that a subscribed task ran. By default, no-op.
+A channel can use this method to modify its state, preventing the value
+from being consumed again.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-####  `` copy ¶
-    
-    
-    copy() -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### finish [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.finish "Copy anchor link to this section for reference")
+
+```
+finish() -> bool
+```
+
+Notify the channel that the Pregel run is finishing. By default, no-op.
+A channel can use this method to modify its state, preventing finish.
+
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### copy [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.copy "Copy anchor link to this section for reference")
+
+```
+copy() -> Self
+```
 
 Return a copy of the channel.
 
-####  `` checkpoint ¶
-    
-    
-    checkpoint() -> [list](https://docs.python.org/3/library/stdtypes.html#list)[Value]
-    
+#### checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.checkpoint "Copy anchor link to this section for reference")
 
-Return a serializable representation of the channel's current state. Raises `EmptyChannelError` if the channel is empty (never updated yet), or doesn't support checkpoints.
+```
+checkpoint() -> list[Value]
+```
 
-####  `` from_checkpoint ¶
-    
-    
-    from_checkpoint(checkpoint: [list](https://docs.python.org/3/library/stdtypes.html#list)[Value]) -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+Return a serializable representation of the channel's current state.
+Raises `EmptyChannelError` if the channel is empty (never updated yet),
+or doesn't support checkpoints.
 
-Return a new identical channel, optionally initialized from a checkpoint. If the checkpoint contains complex data structures, they should be copied.
+#### from\_checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.from_checkpoint "Copy anchor link to this section for reference")
 
-####  `` update ¶
-    
-    
-    update(values: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value | [list](https://docs.python.org/3/library/stdtypes.html#list)[Value]]) -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+```
+from_checkpoint(checkpoint: list[Value]) -> Self
+```
 
-Update the channel's value with the given sequence of updates. The order of the updates in the sequence is arbitrary. This method is called by Pregel for all channels at the end of each step. If there are no updates, it is called with an empty sequence. Raises `InvalidUpdateError` if the sequence of updates is invalid. Returns `True` if the channel was updated, `False` otherwise.
+Return a new identical channel, optionally initialized from a checkpoint.
+If the checkpoint contains complex data structures, they should be copied.
 
-####  `` get ¶
-    
-    
-    get() -> [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value]
-    
+#### update [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.update "Copy anchor link to this section for reference")
+
+```
+update(values: Sequence[Value | list[Value]]) -> bool
+```
+
+Update the channel's value with the given sequence of updates.
+The order of the updates in the sequence is arbitrary.
+This method is called by Pregel for all channels at the end of each step.
+If there are no updates, it is called with an empty sequence.
+Raises `InvalidUpdateError` if the sequence of updates is invalid.
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### get [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.get "Copy anchor link to this section for reference")
+
+```
+get() -> Sequence[Value]
+```
 
 Return the current value of the channel.
 
 Raises `EmptyChannelError` if the channel is empty (never updated yet).
 
-####  `` is_available ¶
-    
-    
-    is_available() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### is\_available [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.Topic.is_available "Copy anchor link to this section for reference")
 
-Return `True` if the channel is available (not empty), `False` otherwise. Subclasses should override this method to provide a more efficient implementation than calling `get()` and catching `EmptyChannelError`.
+```
+is_available() -> bool
+```
 
-###  `` LastValue ¶
+Return `True` if the channel is available (not empty), `False` otherwise.
+Subclasses should override this method to provide a more efficient
+implementation than calling `get()` and catching `EmptyChannelError`.
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[Value]`, `BaseChannel[Value, Value, Value]`
+### LastValue [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue "Copy anchor link to this section for reference")
+
+Bases: `Generic[Value]`, `BaseChannel[Value, Value, Value]`
 
 Stores the last value received, can receive at most one value per step.
 
-METHOD | DESCRIPTION  
----|---  
-`consume` |  Notify the channel that a subscribed task ran. By default, no-op.  
-`finish` |  Notify the channel that the Pregel run is finishing. By default, no-op.  
-`copy` |  Return a copy of the channel.  
-`from_checkpoint` |  Return a new identical channel, optionally initialized from a checkpoint.  
-`update` |  Update the channel's value with the given sequence of updates.  
-`get` |  Return the current value of the channel.  
-`is_available` |  Return `True` if the channel is available (not empty), `False` otherwise.  
-`checkpoint` |  Return a serializable representation of the channel's current state.  
-  
-####  `` ValueType `property` ¶
-    
-    
-    ValueType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `consume` | Notify the channel that a subscribed task ran. By default, no-op. |
+| `finish` | Notify the channel that the Pregel run is finishing. By default, no-op. |
+| `copy` | Return a copy of the channel. |
+| `from_checkpoint` | Return a new identical channel, optionally initialized from a checkpoint. |
+| `update` | Update the channel's value with the given sequence of updates. |
+| `get` | Return the current value of the channel. |
+| `is_available` | Return `True` if the channel is available (not empty), `False` otherwise. |
+| `checkpoint` | Return a serializable representation of the channel's current state. |
+
+#### ValueType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.ValueType "Copy anchor link to this section for reference")
+
+```
+ValueType: type[Value]
+```
 
 The type of the value stored in the channel.
 
-####  `` UpdateType `property` ¶
-    
-    
-    UpdateType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+#### UpdateType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.UpdateType "Copy anchor link to this section for reference")
+
+```
+UpdateType: type[Value]
+```
 
 The type of the update received by the channel.
 
-####  `` consume ¶
-    
-    
-    consume() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### consume [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.consume "Copy anchor link to this section for reference")
 
-Notify the channel that a subscribed task ran. By default, no-op. A channel can use this method to modify its state, preventing the value from being consumed again.
+```
+consume() -> bool
+```
 
-Returns `True` if the channel was updated, `False` otherwise.
-
-####  `` finish ¶
-    
-    
-    finish() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
-
-Notify the channel that the Pregel run is finishing. By default, no-op. A channel can use this method to modify its state, preventing finish.
+Notify the channel that a subscribed task ran. By default, no-op.
+A channel can use this method to modify its state, preventing the value
+from being consumed again.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-####  `` copy ¶
-    
-    
-    copy() -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### finish [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.finish "Copy anchor link to this section for reference")
+
+```
+finish() -> bool
+```
+
+Notify the channel that the Pregel run is finishing. By default, no-op.
+A channel can use this method to modify its state, preventing finish.
+
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### copy [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.copy "Copy anchor link to this section for reference")
+
+```
+copy() -> Self
+```
 
 Return a copy of the channel.
 
-####  `` from_checkpoint ¶
-    
-    
-    from_checkpoint(checkpoint: Value) -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### from\_checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.from_checkpoint "Copy anchor link to this section for reference")
 
-Return a new identical channel, optionally initialized from a checkpoint. If the checkpoint contains complex data structures, they should be copied.
+```
+from_checkpoint(checkpoint: Value) -> Self
+```
 
-####  `` update ¶
-    
-    
-    update(values: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value]) -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+Return a new identical channel, optionally initialized from a checkpoint.
+If the checkpoint contains complex data structures, they should be copied.
 
-Update the channel's value with the given sequence of updates. The order of the updates in the sequence is arbitrary. This method is called by Pregel for all channels at the end of each step. If there are no updates, it is called with an empty sequence. Raises `InvalidUpdateError` if the sequence of updates is invalid. Returns `True` if the channel was updated, `False` otherwise.
+#### update [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.update "Copy anchor link to this section for reference")
 
-####  `` get ¶
-    
-    
-    get() -> Value
-    
+```
+update(values: Sequence[Value]) -> bool
+```
+
+Update the channel's value with the given sequence of updates.
+The order of the updates in the sequence is arbitrary.
+This method is called by Pregel for all channels at the end of each step.
+If there are no updates, it is called with an empty sequence.
+Raises `InvalidUpdateError` if the sequence of updates is invalid.
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### get [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.get "Copy anchor link to this section for reference")
+
+```
+get() -> Value
+```
 
 Return the current value of the channel.
 
 Raises `EmptyChannelError` if the channel is empty (never updated yet).
 
-####  `` is_available ¶
-    
-    
-    is_available() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### is\_available [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.is_available "Copy anchor link to this section for reference")
 
-Return `True` if the channel is available (not empty), `False` otherwise. Subclasses should override this method to provide a more efficient implementation than calling `get()` and catching `EmptyChannelError`.
+```
+is_available() -> bool
+```
 
-####  `` checkpoint ¶
-    
-    
-    checkpoint() -> Value
-    
+Return `True` if the channel is available (not empty), `False` otherwise.
+Subclasses should override this method to provide a more efficient
+implementation than calling `get()` and catching `EmptyChannelError`.
 
-Return a serializable representation of the channel's current state. Raises `EmptyChannelError` if the channel is empty (never updated yet), or doesn't support checkpoints.
+#### checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.LastValue.checkpoint "Copy anchor link to this section for reference")
 
-###  `` EphemeralValue ¶
+```
+checkpoint() -> Value
+```
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[Value]`, `BaseChannel[Value, Value, Value]`
+Return a serializable representation of the channel's current state.
+Raises `EmptyChannelError` if the channel is empty (never updated yet),
+or doesn't support checkpoints.
+
+### EphemeralValue [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue "Copy anchor link to this section for reference")
+
+Bases: `Generic[Value]`, `BaseChannel[Value, Value, Value]`
 
 Stores the value received in the step immediately preceding, clears after.
 
-METHOD | DESCRIPTION  
----|---  
-`consume` |  Notify the channel that a subscribed task ran. By default, no-op.  
-`finish` |  Notify the channel that the Pregel run is finishing. By default, no-op.  
-`copy` |  Return a copy of the channel.  
-`from_checkpoint` |  Return a new identical channel, optionally initialized from a checkpoint.  
-`update` |  Update the channel's value with the given sequence of updates.  
-`get` |  Return the current value of the channel.  
-`is_available` |  Return `True` if the channel is available (not empty), `False` otherwise.  
-`checkpoint` |  Return a serializable representation of the channel's current state.  
-  
-####  `` ValueType `property` ¶
-    
-    
-    ValueType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `consume` | Notify the channel that a subscribed task ran. By default, no-op. |
+| `finish` | Notify the channel that the Pregel run is finishing. By default, no-op. |
+| `copy` | Return a copy of the channel. |
+| `from_checkpoint` | Return a new identical channel, optionally initialized from a checkpoint. |
+| `update` | Update the channel's value with the given sequence of updates. |
+| `get` | Return the current value of the channel. |
+| `is_available` | Return `True` if the channel is available (not empty), `False` otherwise. |
+| `checkpoint` | Return a serializable representation of the channel's current state. |
+
+#### ValueType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.ValueType "Copy anchor link to this section for reference")
+
+```
+ValueType: type[Value]
+```
 
 The type of the value stored in the channel.
 
-####  `` UpdateType `property` ¶
-    
-    
-    UpdateType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+#### UpdateType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.UpdateType "Copy anchor link to this section for reference")
+
+```
+UpdateType: type[Value]
+```
 
 The type of the update received by the channel.
 
-####  `` consume ¶
-    
-    
-    consume() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### consume [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.consume "Copy anchor link to this section for reference")
 
-Notify the channel that a subscribed task ran. By default, no-op. A channel can use this method to modify its state, preventing the value from being consumed again.
+```
+consume() -> bool
+```
 
-Returns `True` if the channel was updated, `False` otherwise.
-
-####  `` finish ¶
-    
-    
-    finish() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
-
-Notify the channel that the Pregel run is finishing. By default, no-op. A channel can use this method to modify its state, preventing finish.
+Notify the channel that a subscribed task ran. By default, no-op.
+A channel can use this method to modify its state, preventing the value
+from being consumed again.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-####  `` copy ¶
-    
-    
-    copy() -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### finish [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.finish "Copy anchor link to this section for reference")
+
+```
+finish() -> bool
+```
+
+Notify the channel that the Pregel run is finishing. By default, no-op.
+A channel can use this method to modify its state, preventing finish.
+
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### copy [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.copy "Copy anchor link to this section for reference")
+
+```
+copy() -> Self
+```
 
 Return a copy of the channel.
 
-####  `` from_checkpoint ¶
-    
-    
-    from_checkpoint(checkpoint: Value) -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### from\_checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.from_checkpoint "Copy anchor link to this section for reference")
 
-Return a new identical channel, optionally initialized from a checkpoint. If the checkpoint contains complex data structures, they should be copied.
+```
+from_checkpoint(checkpoint: Value) -> Self
+```
 
-####  `` update ¶
-    
-    
-    update(values: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value]) -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+Return a new identical channel, optionally initialized from a checkpoint.
+If the checkpoint contains complex data structures, they should be copied.
 
-Update the channel's value with the given sequence of updates. The order of the updates in the sequence is arbitrary. This method is called by Pregel for all channels at the end of each step. If there are no updates, it is called with an empty sequence. Raises `InvalidUpdateError` if the sequence of updates is invalid. Returns `True` if the channel was updated, `False` otherwise.
+#### update [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.update "Copy anchor link to this section for reference")
 
-####  `` get ¶
-    
-    
-    get() -> Value
-    
+```
+update(values: Sequence[Value]) -> bool
+```
+
+Update the channel's value with the given sequence of updates.
+The order of the updates in the sequence is arbitrary.
+This method is called by Pregel for all channels at the end of each step.
+If there are no updates, it is called with an empty sequence.
+Raises `InvalidUpdateError` if the sequence of updates is invalid.
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### get [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.get "Copy anchor link to this section for reference")
+
+```
+get() -> Value
+```
 
 Return the current value of the channel.
 
 Raises `EmptyChannelError` if the channel is empty (never updated yet).
 
-####  `` is_available ¶
-    
-    
-    is_available() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### is\_available [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.is_available "Copy anchor link to this section for reference")
 
-Return `True` if the channel is available (not empty), `False` otherwise. Subclasses should override this method to provide a more efficient implementation than calling `get()` and catching `EmptyChannelError`.
+```
+is_available() -> bool
+```
 
-####  `` checkpoint ¶
-    
-    
-    checkpoint() -> Value
-    
+Return `True` if the channel is available (not empty), `False` otherwise.
+Subclasses should override this method to provide a more efficient
+implementation than calling `get()` and catching `EmptyChannelError`.
 
-Return a serializable representation of the channel's current state. Raises `EmptyChannelError` if the channel is empty (never updated yet), or doesn't support checkpoints.
+#### checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.EphemeralValue.checkpoint "Copy anchor link to this section for reference")
 
-###  `` BinaryOperatorAggregate ¶
+```
+checkpoint() -> Value
+```
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[Value]`, `BaseChannel[Value, Value, Value]`
+Return a serializable representation of the channel's current state.
+Raises `EmptyChannelError` if the channel is empty (never updated yet),
+or doesn't support checkpoints.
+
+### BinaryOperatorAggregate [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate "Copy anchor link to this section for reference")
+
+Bases: `Generic[Value]`, `BaseChannel[Value, Value, Value]`
 
 Stores the result of applying a binary operator to the current value and each new value.
-    
-    
-    import operator
-    
-    total = Channels.BinaryOperatorAggregate(int, operator.add)
-    
 
-METHOD | DESCRIPTION  
----|---  
-`consume` |  Notify the channel that a subscribed task ran. By default, no-op.  
-`finish` |  Notify the channel that the Pregel run is finishing. By default, no-op.  
-`copy` |  Return a copy of the channel.  
-`from_checkpoint` |  Return a new identical channel, optionally initialized from a checkpoint.  
-`update` |  Update the channel's value with the given sequence of updates.  
-`get` |  Return the current value of the channel.  
-`is_available` |  Return `True` if the channel is available (not empty), `False` otherwise.  
-`checkpoint` |  Return a serializable representation of the channel's current state.  
-  
-####  `` ValueType `property` ¶
-    
-    
-    ValueType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+```
+import operator
+
+total = Channels.BinaryOperatorAggregate(int, operator.add)
+```
+
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `consume` | Notify the channel that a subscribed task ran. By default, no-op. |
+| `finish` | Notify the channel that the Pregel run is finishing. By default, no-op. |
+| `copy` | Return a copy of the channel. |
+| `from_checkpoint` | Return a new identical channel, optionally initialized from a checkpoint. |
+| `update` | Update the channel's value with the given sequence of updates. |
+| `get` | Return the current value of the channel. |
+| `is_available` | Return `True` if the channel is available (not empty), `False` otherwise. |
+| `checkpoint` | Return a serializable representation of the channel's current state. |
+
+#### ValueType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.ValueType "Copy anchor link to this section for reference")
+
+```
+ValueType: type[Value]
+```
 
 The type of the value stored in the channel.
 
-####  `` UpdateType `property` ¶
-    
-    
-    UpdateType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+#### UpdateType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.UpdateType "Copy anchor link to this section for reference")
+
+```
+UpdateType: type[Value]
+```
 
 The type of the update received by the channel.
 
-####  `` consume ¶
-    
-    
-    consume() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### consume [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.consume "Copy anchor link to this section for reference")
 
-Notify the channel that a subscribed task ran. By default, no-op. A channel can use this method to modify its state, preventing the value from being consumed again.
+```
+consume() -> bool
+```
 
-Returns `True` if the channel was updated, `False` otherwise.
-
-####  `` finish ¶
-    
-    
-    finish() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
-
-Notify the channel that the Pregel run is finishing. By default, no-op. A channel can use this method to modify its state, preventing finish.
+Notify the channel that a subscribed task ran. By default, no-op.
+A channel can use this method to modify its state, preventing the value
+from being consumed again.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-####  `` copy ¶
-    
-    
-    copy() -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### finish [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.finish "Copy anchor link to this section for reference")
+
+```
+finish() -> bool
+```
+
+Notify the channel that the Pregel run is finishing. By default, no-op.
+A channel can use this method to modify its state, preventing finish.
+
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### copy [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.copy "Copy anchor link to this section for reference")
+
+```
+copy() -> Self
+```
 
 Return a copy of the channel.
 
-####  `` from_checkpoint ¶
-    
-    
-    from_checkpoint(checkpoint: Value) -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### from\_checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.from_checkpoint "Copy anchor link to this section for reference")
 
-Return a new identical channel, optionally initialized from a checkpoint. If the checkpoint contains complex data structures, they should be copied.
+```
+from_checkpoint(checkpoint: Value) -> Self
+```
 
-####  `` update ¶
-    
-    
-    update(values: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value]) -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+Return a new identical channel, optionally initialized from a checkpoint.
+If the checkpoint contains complex data structures, they should be copied.
 
-Update the channel's value with the given sequence of updates. The order of the updates in the sequence is arbitrary. This method is called by Pregel for all channels at the end of each step. If there are no updates, it is called with an empty sequence. Raises `InvalidUpdateError` if the sequence of updates is invalid. Returns `True` if the channel was updated, `False` otherwise.
+#### update [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.update "Copy anchor link to this section for reference")
 
-####  `` get ¶
-    
-    
-    get() -> Value
-    
+```
+update(values: Sequence[Value]) -> bool
+```
+
+Update the channel's value with the given sequence of updates.
+The order of the updates in the sequence is arbitrary.
+This method is called by Pregel for all channels at the end of each step.
+If there are no updates, it is called with an empty sequence.
+Raises `InvalidUpdateError` if the sequence of updates is invalid.
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### get [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.get "Copy anchor link to this section for reference")
+
+```
+get() -> Value
+```
 
 Return the current value of the channel.
 
 Raises `EmptyChannelError` if the channel is empty (never updated yet).
 
-####  `` is_available ¶
-    
-    
-    is_available() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### is\_available [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.is_available "Copy anchor link to this section for reference")
 
-Return `True` if the channel is available (not empty), `False` otherwise. Subclasses should override this method to provide a more efficient implementation than calling `get()` and catching `EmptyChannelError`.
+```
+is_available() -> bool
+```
 
-####  `` checkpoint ¶
-    
-    
-    checkpoint() -> Value
-    
+Return `True` if the channel is available (not empty), `False` otherwise.
+Subclasses should override this method to provide a more efficient
+implementation than calling `get()` and catching `EmptyChannelError`.
 
-Return a serializable representation of the channel's current state. Raises `EmptyChannelError` if the channel is empty (never updated yet), or doesn't support checkpoints.
+#### checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.BinaryOperatorAggregate.checkpoint "Copy anchor link to this section for reference")
 
-###  `` AnyValue ¶
+```
+checkpoint() -> Value
+```
 
-Bases: `[Generic](https://docs.python.org/3/library/typing.html#typing.Generic "<code>typing.Generic</code>")[Value]`, `BaseChannel[Value, Value, Value]`
+Return a serializable representation of the channel's current state.
+Raises `EmptyChannelError` if the channel is empty (never updated yet),
+or doesn't support checkpoints.
 
-Stores the last value received, assumes that if multiple values are received, they are all equal.
+### AnyValue [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue "Copy anchor link to this section for reference")
 
-METHOD | DESCRIPTION  
----|---  
-`consume` |  Notify the channel that a subscribed task ran. By default, no-op.  
-`finish` |  Notify the channel that the Pregel run is finishing. By default, no-op.  
-`copy` |  Return a copy of the channel.  
-`from_checkpoint` |  Return a new identical channel, optionally initialized from a checkpoint.  
-`update` |  Update the channel's value with the given sequence of updates.  
-`get` |  Return the current value of the channel.  
-`is_available` |  Return `True` if the channel is available (not empty), `False` otherwise.  
-`checkpoint` |  Return a serializable representation of the channel's current state.  
-  
-####  `` ValueType `property` ¶
-    
-    
-    ValueType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+Bases: `Generic[Value]`, `BaseChannel[Value, Value, Value]`
+
+Stores the last value received, assumes that if multiple values are
+received, they are all equal.
+
+| METHOD | DESCRIPTION |
+| --- | --- |
+| `consume` | Notify the channel that a subscribed task ran. By default, no-op. |
+| `finish` | Notify the channel that the Pregel run is finishing. By default, no-op. |
+| `copy` | Return a copy of the channel. |
+| `from_checkpoint` | Return a new identical channel, optionally initialized from a checkpoint. |
+| `update` | Update the channel's value with the given sequence of updates. |
+| `get` | Return the current value of the channel. |
+| `is_available` | Return `True` if the channel is available (not empty), `False` otherwise. |
+| `checkpoint` | Return a serializable representation of the channel's current state. |
+
+#### ValueType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.ValueType "Copy anchor link to this section for reference")
+
+```
+ValueType: type[Value]
+```
 
 The type of the value stored in the channel.
 
-####  `` UpdateType `property` ¶
-    
-    
-    UpdateType: [type](https://docs.python.org/3/library/functions.html#type)[Value]
-    
+#### UpdateType `property` [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.UpdateType "Copy anchor link to this section for reference")
+
+```
+UpdateType: type[Value]
+```
 
 The type of the update received by the channel.
 
-####  `` consume ¶
-    
-    
-    consume() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### consume [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.consume "Copy anchor link to this section for reference")
 
-Notify the channel that a subscribed task ran. By default, no-op. A channel can use this method to modify its state, preventing the value from being consumed again.
+```
+consume() -> bool
+```
 
-Returns `True` if the channel was updated, `False` otherwise.
-
-####  `` finish ¶
-    
-    
-    finish() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
-
-Notify the channel that the Pregel run is finishing. By default, no-op. A channel can use this method to modify its state, preventing finish.
+Notify the channel that a subscribed task ran. By default, no-op.
+A channel can use this method to modify its state, preventing the value
+from being consumed again.
 
 Returns `True` if the channel was updated, `False` otherwise.
 
-####  `` copy ¶
-    
-    
-    copy() -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### finish [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.finish "Copy anchor link to this section for reference")
+
+```
+finish() -> bool
+```
+
+Notify the channel that the Pregel run is finishing. By default, no-op.
+A channel can use this method to modify its state, preventing finish.
+
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### copy [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.copy "Copy anchor link to this section for reference")
+
+```
+copy() -> Self
+```
 
 Return a copy of the channel.
 
-####  `` from_checkpoint ¶
-    
-    
-    from_checkpoint(checkpoint: Value) -> [Self](https://typing-extensions.readthedocs.io/en/latest/index.html#typing_extensions.Self "<code>typing_extensions.Self</code>")
-    
+#### from\_checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.from_checkpoint "Copy anchor link to this section for reference")
 
-Return a new identical channel, optionally initialized from a checkpoint. If the checkpoint contains complex data structures, they should be copied.
+```
+from_checkpoint(checkpoint: Value) -> Self
+```
 
-####  `` update ¶
-    
-    
-    update(values: [Sequence](https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence "<code>collections.abc.Sequence</code>")[Value]) -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+Return a new identical channel, optionally initialized from a checkpoint.
+If the checkpoint contains complex data structures, they should be copied.
 
-Update the channel's value with the given sequence of updates. The order of the updates in the sequence is arbitrary. This method is called by Pregel for all channels at the end of each step. If there are no updates, it is called with an empty sequence. Raises `InvalidUpdateError` if the sequence of updates is invalid. Returns `True` if the channel was updated, `False` otherwise.
+#### update [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.update "Copy anchor link to this section for reference")
 
-####  `` get ¶
-    
-    
-    get() -> Value
-    
+```
+update(values: Sequence[Value]) -> bool
+```
+
+Update the channel's value with the given sequence of updates.
+The order of the updates in the sequence is arbitrary.
+This method is called by Pregel for all channels at the end of each step.
+If there are no updates, it is called with an empty sequence.
+Raises `InvalidUpdateError` if the sequence of updates is invalid.
+Returns `True` if the channel was updated, `False` otherwise.
+
+#### get [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.get "Copy anchor link to this section for reference")
+
+```
+get() -> Value
+```
 
 Return the current value of the channel.
 
 Raises `EmptyChannelError` if the channel is empty (never updated yet).
 
-####  `` is_available ¶
-    
-    
-    is_available() -> [bool](https://docs.python.org/3/library/functions.html#bool)
-    
+#### is\_available [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.is_available "Copy anchor link to this section for reference")
 
-Return `True` if the channel is available (not empty), `False` otherwise. Subclasses should override this method to provide a more efficient implementation than calling `get()` and catching `EmptyChannelError`.
+```
+is_available() -> bool
+```
 
-####  `` checkpoint ¶
-    
-    
-    checkpoint() -> Value
-    
+Return `True` if the channel is available (not empty), `False` otherwise.
+Subclasses should override this method to provide a more efficient
+implementation than calling `get()` and catching `EmptyChannelError`.
 
-Return a serializable representation of the channel's current state. Raises `EmptyChannelError` if the channel is empty (never updated yet), or doesn't support checkpoints.
+#### checkpoint [¶](https://reference.langchain.com/python/langgraph/channels/#langgraph.channels.AnyValue.checkpoint "Copy anchor link to this section for reference")
+
+```
+checkpoint() -> Value
+```
+
+Return a serializable representation of the channel's current state.
+Raises `EmptyChannelError` if the channel is empty (never updated yet),
+or doesn't support checkpoints.
 
 Back to top
-
----
